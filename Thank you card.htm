@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thank You & Best Wishes — Tattva Yantrika</title>
+  <style type="text/css">
+    /* CLIENT RESETS */
+    body, table, td, a { -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+    table, td { mso-table-lspace:0pt; mso-table-rspace:0pt; }
+    img { -ms-interpolation-mode:bicubic; border:0; outline:none; text-decoration:none; display:block; }
+    table { border-collapse:collapse !important; }
+    body { margin:0; padding:0; width:100% !important; height:100% !important; }
+    
+    /* Thank you card color scheme */
+    .light { color:#f5f5dc !important; }
+    .muted { color:#c9b037 !important; }
+    .accent { color:#ffd700 !important; }
+    .gratitude { color:#32cd32 !important; }
+    .success { color:#00d4aa !important; }
+    .warm { color:#ff8c69 !important; }
+    .btn a { color:#1a1a2e !important; text-decoration:none !important; }
+    
+    /* Enhanced glassmorphism for thank you card */
+    .glass-card {
+      background: rgba(26, 26, 46, 0.5) !important;
+      backdrop-filter: blur(25px) !important;
+      -webkit-backdrop-filter: blur(25px) !important;
+      border: 2px solid rgba(50, 205, 50, 0.4) !important;
+      box-shadow: 
+        0 15px 45px rgba(50, 205, 50, 0.2),
+        0 10px 35px rgba(255, 215, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    }
+    
+    .glass-inner {
+      background: rgba(0, 212, 170, 0.1) !important;
+      backdrop-filter: blur(15px) !important;
+      -webkit-backdrop-filter: blur(15px) !important;
+      border: 1px solid rgba(255, 215, 0, 0.3) !important;
+      box-shadow: 
+        0 6px 20px rgba(50, 205, 50, 0.15),
+        inset 0 1px 0 rgba(255, 215, 0, 0.1) !important;
+    }
+    
+    .celebration-glow {
+      background: rgba(50, 205, 50, 0.15) !important;
+      border: 2px solid rgba(50, 205, 50, 0.4) !important;
+      box-shadow: 
+        0 0 25px rgba(50, 205, 50, 0.3),
+        0 0 15px rgba(255, 215, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    .gratitude-glow {
+      text-shadow: 
+        0 0 8px rgba(50, 205, 50, 0.6),
+        0 0 15px rgba(50, 205, 50, 0.4),
+        0 0 25px rgba(255, 215, 0, 0.3) !important;
+    }
+    
+    .warm-glow {
+      text-shadow: 
+        0 0 6px rgba(255, 140, 105, 0.6),
+        0 0 12px rgba(255, 140, 105, 0.4) !important;
+    }
+    
+    .success-glow {
+      text-shadow: 
+        0 0 8px rgba(0, 212, 170, 0.7),
+        0 0 15px rgba(0, 212, 170, 0.5) !important;
+    }
+    
+    .contact-btn {
+      background: linear-gradient(135deg, #00d4aa, #32cd32, #ffd700) !important;
+      border: 2px solid rgba(0, 212, 170, 0.6) !important;
+      box-shadow: 
+        0 0 20px rgba(0, 212, 170, 0.4),
+        0 0 15px rgba(50, 205, 50, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    .contact-btn:hover {
+      box-shadow: 
+        0 0 30px rgba(0, 212, 170, 0.6),
+        0 0 25px rgba(50, 205, 50, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+      transform: translateY(-3px) scale(1.02) !important;
+    }
+    
+    /* Floating hearts animation */
+    .float-hearts {
+      animation: floatUp 4s infinite ease-in-out !important;
+    }
+    
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+      50% { transform: translateY(-10px) rotate(5deg); opacity: 1; }
+    }
+    
+    /* Success pulse animation */
+    .pulse-success {
+      animation: successPulse 3s infinite alternate !important;
+    }
+    
+    @keyframes successPulse {
+      0% { 
+        text-shadow: 
+          0 0 5px rgba(50, 205, 50, 0.4),
+          0 0 10px rgba(50, 205, 50, 0.2);
+      }
+      100% { 
+        text-shadow: 
+          0 0 12px rgba(50, 205, 50, 0.8),
+          0 0 20px rgba(50, 205, 50, 0.5),
+          0 0 30px rgba(255, 215, 0, 0.3);
+      }
+    }
+    
+    /* Fallback fonts */
+    .font { font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    
+    /* Thank you themed background */
+    .thank-you-bg {
+      background: 
+        radial-gradient(circle at 25% 75%, rgba(50, 205, 50, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 75% 25%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 90% 10%, rgba(255, 140, 105, 0.05) 0%, transparent 50%),
+        linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 30%, #16213e 70%, #0f3460 100%) !important;
+    }
+    
+    /* Celebration grid */
+    .celebration-grid {
+      background-image: 
+        linear-gradient(rgba(50, 205, 50, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 215, 0, 0.02) 1px, transparent 1px) !important;
+      background-size: 40px 40px !important;
+    }
+
+    /* Achievement badge */
+    .achievement-badge {
+      background: linear-gradient(135deg, #32cd32, #00d4aa, #ffd700) !important;
+      border: 1px solid rgba(255, 255, 255, 0.4) !important;
+      box-shadow: 
+        0 0 20px rgba(50, 205, 50, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+      border-radius: 25px !important;
+      color: #1a1a2e !important;
+      font-weight: 900 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 1px !important;
+    }
+
+    /* Confetti effect */
+    .confetti {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #ffd700;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: confetti-fall 3s infinite linear;
+    }
+
+    @keyframes confetti-fall {
+      0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0; padding:0;" class="thank-you-bg celebration-grid">
+
+  <!-- Full-width background wrapper -->
+  <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" class="thank-you-bg">
+    <tr>
+      <td align="center" style="padding:30px 15px;">
+
+        <!-- Thank You Card -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:650px; border-radius:25px;" class="glass-card">
+          <tr>
+            <td style="padding:40px 35px;">
+
+              <!-- Achievement Badge -->
+              <table role="presentation" width="100%">
+                <tr>
+                  <td align="center" style="padding:0 0 25px 0;">
+                    <div class="achievement-badge font float-hearts" style="display:inline-block; padding:12px 25px; font-size:14px;">
+                      🎉 WORKSHOP COMPLETED 🎉
+                    </div>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Logo Section -->
+              <table role="presentation" width="100%">
+                <tr>
+                  <td align="center" style="padding:10px 0 25px 0;">
+                    <img src="https://github.com/tattvayantrika/website/raw/372046b58f6457bb3ca9085d156d578876f16c2a/TATTVA%20YANTRIKA-BG%20REMOVED.png"
+                         alt="Tattva Yantrika" width="200"
+                         style="width:200px; max-width:90%; height:auto; filter: drop-shadow(0 0 15px rgba(50, 205, 50, 0.4));" />
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Main Thank You Message -->
+              <table role="presentation" width="100%">
+                <tr>
+                  <td align="center" class="font">
+                    <h1 style="margin:15px 0 0 0; font-size:36px; line-height:1.2; font-weight:900; letter-spacing:2px; color:#32cd32;" class="gratitude-glow pulse-success">
+                      Thank You! 💚
+                    </h1>
+                    <h2 style="margin:10px 0 0 0; font-size:22px; line-height:1.3; font-weight:700; letter-spacing:1px; color:#00d4aa;" class="success-glow">
+                      For an Amazing Journey Together
+                    </h2>
+                    <p class="light warm-glow" style="margin:15px 0 0 0; font-size:16px; line-height:1.6; font-weight:500;">
+                      <strong>May 2024 → September 2024</strong> — What an incredible journey it has been!
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Journey Celebration -->
+              <table role="presentation" width="100%" style="margin-top:25px;">
+                <tr>
+                  <td class="font celebration-glow" style="border-radius:18px; padding:25px; text-align:center;">
+                    <h3 class="gratitude" style="margin:0 0 15px 0; font-size:20px; font-weight:700;">
+                      🌟 What We Achieved Together 🌟
+                    </h3>
+                    <p class="light" style="margin:0; font-size:16px; line-height:1.7;">
+                      From your first <span class="accent" style="font-weight:600;">SolidWorks</span> model to mastering complex <span class="accent" style="font-weight:600;">ANSYS</span> simulations, you've grown tremendously as engineers. Your dedication, curiosity, and perseverance have been truly inspiring to witness.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Personal Message -->
+              <table role="presentation" width="100%" style="margin-top:25px;">
+                <tr>
+                  <td class="font glass-inner" style="border-radius:16px; padding:25px;">
+                    <p class="warm" style="margin:0 0 15px 0; font-size:18px; font-weight:700; text-align:center;">
+                      🙏 A Heartfelt Thank You
+                    </p>
+                    <p class="light" style="margin:0 0 15px 0; font-size:15px; line-height:1.8; text-align:center;">
+                      Thank you for your commitment, your thoughtful questions, your willingness to learn, and for making every session engaging and meaningful. Each one of you brought unique perspectives that enriched our collective learning experience.
+                    </p>
+                    <p class="success" style="margin:0; font-size:16px; font-weight:600; text-align:center;">
+                      You are now equipped with powerful engineering tools and the confidence to tackle complex real-world challenges! 🚀
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Future Wishes -->
+              <table role="presentation" width="100%" style="margin-top:25px;">
+                <tr>
+                  <td class="font glass-inner" style="border-radius:16px; padding:25px; border: 2px solid rgba(255, 140, 105, 0.3) !important;">
+                    <p class="warm" style="margin:0 0 15px 0; font-size:16px; font-weight:700; text-align:center;">
+                      ✨ Wishing You Continued Success ✨
+                    </p>
+                    <ul style="margin:0; padding-left:0; list-style:none; color:#f5f5dc; text-align:center;">
+                      <li style="margin:12px 0; font-size:15px;">🎯 <strong>May your simulations always converge</strong></li>
+                      <li style="margin:12px 0; font-size:15px;">🏆 <strong>May your designs exceed expectations</strong></li>
+                      <li style="margin:12px 0; font-size:15px;">🚀 <strong>May your engineering careers soar to new heights</strong></li>
+                      <li style="margin:12px 0; font-size:15px;">💡 <strong>May you always find innovative solutions</strong></li>
+                      <li style="margin:12px 0; font-size:15px;">🌟 <strong>May you inspire the next generation of engineers</strong></li>
+                    </ul>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Certificate Information -->
+              <table role="presentation" width="100%" style="margin-top:25px;">
+                <tr>
+                  <td class="font glass-inner" style="border-radius:16px; padding:25px; border: 2px solid rgba(255, 215, 0, 0.4) !important; box-shadow: 0 0 20px rgba(255, 215, 0, 0.2) !important;">
+                    <p class="accent" style="margin:0 0 15px 0; font-size:18px; font-weight:700; text-align:center;" class="pulse-success">
+                      🏆 Certificate of Completion
+                    </p>
+                    <div style="background: rgba(255, 215, 0, 0.1); padding:20px; border-radius:12px; border: 1px solid rgba(255, 215, 0, 0.3); text-align:center;">
+                      <p class="light" style="margin:0 0 15px 0; font-size:16px; line-height:1.7;">
+                        Your <span class="accent" style="font-weight:700;">official certificate</span> recognizing your successful completion of the <strong>ANSYS & SolidWorks Workshop</strong> will be delivered to your email address.
+                      </p>
+                      <div style="background: rgba(50, 205, 50, 0.15); padding:15px; border-radius:10px; border: 1px solid rgba(50, 205, 50, 0.3); margin:15px 0;">
+                        <p class="gratitude" style="margin:0; font-size:15px; font-weight:700;">
+                          📅 <strong>Timeline:</strong> Within 24 hours of submission completion
+                        </p>
+                      </div>
+                      <p class="muted" style="margin:0; font-size:14px; line-height:1.6;">
+                        This certificate validates your engineering skills and workshop participation — perfect for your professional portfolio! 📜✨
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Stay Connected -->
+              <table role="presentation" width="100%" style="margin-top:25px;">
+                <tr>
+                  <td align="center">
+                    <h3 class="success-glow" style="margin:0 0 20px 0; font-size:22px; font-weight:700; color:#00d4aa;" class="font">
+                      📧 Stay Connected!
+                    </h3>
+                    <p class="light" style="margin:0 0 20px 0; font-size:16px; line-height:1.6; text-align:center;">
+                      Have questions about your projects? Need guidance on your engineering journey?<br/>
+                      <span class="accent" style="font-weight:600;">Feel free to reach out anytime!</span>
+                    </p>
+                    
+                    <!-- Contact Button -->
+                    <div class="btn contact-btn" style="display:inline-block; border-radius:16px; margin:10px 0;">
+                      <a href="mailto:contact@tattvayantrika.com"
+                         style="display:inline-block; padding:18px 35px; font-weight:900; font-size:16px; line-height:1; font-family:'Orbitron', Segoe UI, Roboto, Helvetica, Arial, sans-serif; text-transform:uppercase; letter-spacing:1px;">
+                        📧 Contact@TattvaYantrika.com
+                      </a>
+                    </div>
+                    
+                    <p class="muted font" style="margin:15px 0 0 0; font-size:13px; text-align:center;">
+                      Don't hesitate to reach out — we're always here to help! 💬
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Final Message -->
+              <table role="presentation" width="100%" style="margin-top:30px;">
+                <tr>
+                  <td class="font celebration-glow" style="padding:25px; border-radius:18px; text-align:center;">
+                    <h3 class="gratitude-glow" style="margin:0 0 15px 0; font-size:24px; font-weight:700; color:#32cd32;">
+                      The Journey Continues... 🌈
+                    </h3>
+                    <p class="light" style="margin:0; font-size:16px; line-height:1.7;">
+                      While our workshop has ended, your engineering adventure is just beginning. Take these skills, apply them boldly, and remember that every expert was once a beginner who never gave up.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Signature -->
+              <table role="presentation" width="100%" style="margin:35px 0 10px 0;">
+                <tr>
+                  <td class="font" align="center">
+                    <p class="light warm-glow" style="margin:0; font-size:18px; font-weight:700;">
+                      With gratitude and best wishes! 🙏✨
+                    </p>
+                    <p class="accent" style="margin:10px 0 0 0; font-size:16px; font-weight:600;">
+                      — The Tattva Yantrika Team
+                    </p>
+                    <p class="muted" style="margin:15px 0 0 0; font-size:13px; line-height:1.5;">
+                      Engineering Excellence Through Innovation | May - September 2024
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+        </table>
+        <!-- /Thank You Card -->
+
+      </td>
+    </tr>
+  </table>
+
+  <!-- JavaScript for confetti effect -->
+  <script>
+    // Create floating confetti
+    function createConfetti() {
+      const colors = ['#32cd32', '#00d4aa', '#ffd700', '#ff8c69'];
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + '%';
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.animationDelay = Math.random() * 3 + 's';
+      confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      document.body.appendChild(confetti);
+      
+      setTimeout(() => confetti.remove(), 5000);
+    }
+
+    // Generate confetti periodically
+    setInterval(createConfetti, 500);
+  </script>
+
+</body>
+</html>
