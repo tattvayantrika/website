@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SolidWorks Advanced Professional - Course Curriculum</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #060606;
+    --bg-card: rgba(255,255,255,0.04);
+    --bg-card-hover: rgba(255,255,255,0.07);
+    --border: rgba(255,255,255,0.09);
+    --border-hover: rgba(255,255,255,0.18);
+    
+    /* Black & Yellow/Orange Minimalist Theme */
+    --accent: #FFB800; 
+    --accent-dim: rgba(255,184,0,0.12);
+    --accent-glow: rgba(255,184,0,0.06);
+    
+    --text-primary: #FFFFFF;
+    --text-secondary: #A0A0A0;
+    --text-muted: #5A5A5A;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .cfd-wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 80px 24px 100px;
+    position: relative;
+  }
+
+  .bg-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fadeUp 0.6s ease 0.1s forwards;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 650px;
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fadeUp 0.6s ease 0.2s forwards;
+  }
+
+  .pricing-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fadeUp 0.6s ease 0.25s forwards;
+  }
+
+  .price-current {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+
+  .price-original {
+    font-size: 18px;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    font-weight: 500;
+  }
+
+  .weeks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .week-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.25s ease, background 0.25s ease;
+    opacity: 0;
+    transform: translateY(16px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .week-card:nth-child(1) { animation: fadeUp 0.5s ease 0.35s forwards; }
+  .week-card:nth-child(2) { animation: fadeUp 0.5s ease 0.45s forwards; }
+  .week-card:nth-child(3) { animation: fadeUp 0.5s ease 0.55s forwards; }
+  .week-card:nth-child(4) { animation: fadeUp 0.5s ease 0.65s forwards; }
+  .week-card:nth-child(5) { animation: fadeUp 0.5s ease 0.75s forwards; }
+  .week-card:nth-child(6) { animation: fadeUp 0.5s ease 0.85s forwards; }
+
+  .week-card:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-card-hover);
+  }
+
+  .week-card.open {
+    border-color: rgba(255,184,0,0.22);
+  }
+
+  .week-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 26px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .week-number {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid rgba(255,184,0,0.2);
+    border-radius: 6px;
+    padding: 4px 9px;
+    flex-shrink: 0;
+    min-width: 60px;
+    text-align: center;
+  }
+
+  .week-title-block {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .week-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .week-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+
+  .week-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+
+  .progress-dots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    transition: background 0.3s ease;
+  }
+
+  .week-card.open .dot { background: var(--accent); }
+
+  .toggle-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.25s, background 0.25s, transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .toggle-icon svg {
+    width: 12px;
+    height: 12px;
+    stroke: var(--text-secondary);
+    transition: stroke 0.25s, transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  }
+
+  .week-card:hover .toggle-icon {
+    border-color: var(--border-hover);
+    background: rgba(255,255,255,0.04);
+  }
+
+  .week-card.open .toggle-icon {
+    border-color: rgba(255,184,0,0.3);
+    background: var(--accent-dim);
+  }
+
+  .week-card.open .toggle-icon svg {
+    stroke: var(--accent);
+    transform: rotate(45deg);
+  }
+
+  .week-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .week-body-inner {
+    padding: 0 26px 26px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 20px;
+  }
+
+  .sessions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .session-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    cursor: default;
+  }
+
+  .session-item:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.1);
+    transform: translateX(3px);
+  }
+
+  .session-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .session-icon.type-session { background: rgba(255,184,0,0.08); }
+  .session-icon.type-quiz { background: rgba(255,122,0,0.08); }
+  .session-icon.type-resource { background: rgba(120,255,120,0.07); }
+  .session-icon.type-live { background: rgba(255,87,34,0.08); }
+
+  .session-icon svg { width: 14px; height: 14px; }
+  .session-icon.type-session svg { stroke: var(--accent); }
+  .session-icon.type-quiz svg { stroke: #FF7A00; }
+  .session-icon.type-resource svg { stroke: #78FF78; }
+  .session-icon.type-live svg { stroke: #FF5722; }
+
+  .session-label {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .session-label strong {
+    color: rgba(255,255,255,0.75);
+    font-weight: 500;
+  }
+
+  .session-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  .tag-session { color: var(--accent); background: rgba(255,184,0,0.08); }
+  .tag-quiz { color: #FF7A00; background: rgba(255,122,0,0.08); }
+  .tag-resource { color: #78FF78; background: rgba(120,255,120,0.07); }
+  .tag-live { color: #FF5722; background: rgba(255,87,34,0.08); }
+
+  .assessment-panel {
+    margin-top: 48px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 36px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.6s ease 0.95s forwards;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .assessment-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,184,0,0.3), transparent);
+  }
+
+  .panel-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+  }
+
+  .assessment-desc {
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+
+  .elite-badge-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: rgba(255,184,0,0.05);
+    border: 1px solid rgba(255,184,0,0.2);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 32px;
+  }
+
+  .elite-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255,184,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .elite-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--accent);
+    fill: none;
+  }
+
+  .elite-text h4 {
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .elite-text p {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+  }
+
+  .cert-process-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .process-step {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 16px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .step-number {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent-dim);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .step-text {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.45;
+  }
+
+  .highlights-panel {
+    margin-top: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 36px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.6s ease 1.05s forwards;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+  }
+
+  .highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .highlight-item:hover {
+    background: rgba(255,184,0,0.05);
+    border-color: rgba(255,184,0,0.15);
+  }
+
+  .check-mark {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255,184,0,0.12);
+    border: 1px solid rgba(255,184,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .check-mark svg {
+    width: 10px;
+    height: 10px;
+    stroke: var(--accent);
+  }
+
+  .highlight-text {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .cfd-wrapper { padding: 56px 16px 72px; }
+    .week-header { padding: 18px 18px; gap: 12px; }
+    .week-body-inner { padding: 16px 18px 20px; }
+    .week-number { display: none; }
+    .week-title { font-size: 14px; white-space: normal; }
+    .assessment-panel, .highlights-panel { padding: 24px 20px; }
+    .highlights-grid { grid-template-columns: 1fr 1fr; }
+    .week-meta { display: none; }
+    .process-steps { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<svg class="bg-canvas" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="1440" height="900" fill="url(#grid)"/>
+  <line x1="0" y1="0" x2="1440" y2="900" stroke="rgba(255,255,255,0.018)" stroke-width="0.5"/>
+  <line x1="1440" y1="0" x2="0" y2="900" stroke="rgba(255,255,255,0.018)" stroke-width="0.5"/>
+  <line x1="720" y1="0" x2="720" y2="900" stroke="rgba(255,255,255,0.025)" stroke-width="0.5" stroke-dasharray="4 8"/>
+  <circle cx="720" cy="450" r="280" fill="none" stroke="rgba(255,184,0,0.035)" stroke-width="0.5"/>
+  <circle cx="720" cy="450" r="420" fill="none" stroke="rgba(255,184,0,0.025)" stroke-width="0.5"/>
+  <circle cx="720" cy="450" r="560" fill="none" stroke="rgba(255,184,0,0.015)" stroke-width="0.5"/>
+  <path d="M 200 100 L 500 100 L 700 300 L 500 500 L 200 500 Z" fill="none" stroke="rgba(255,255,255,0.022)" stroke-width="0.5"/>
+  <path d="M 940 400 L 1240 400 L 1340 550 L 1240 700 L 940 700 Z" fill="none" stroke="rgba(255,255,255,0.022)" stroke-width="0.5"/>
+  <line x1="200" y1="100" x2="700" y2="300" stroke="rgba(255,184,0,0.04)" stroke-width="0.5" stroke-dasharray="6 10"/>
+  <line x1="940" y1="400" x2="1340" y2="550" stroke="rgba(255,184,0,0.04)" stroke-width="0.5" stroke-dasharray="6 10"/>
+  <circle cx="200" cy="100" r="3" fill="rgba(255,184,0,0.2)"/>
+  <circle cx="700" cy="300" r="3" fill="rgba(255,184,0,0.2)"/>
+  <circle cx="940" cy="700" r="3" fill="rgba(255,184,0,0.2)"/>
+  <circle cx="500" cy="500" r="3" fill="rgba(255,184,0,0.15)"/>
+</svg>
+
+<div class="cfd-wrapper">
+  <div class="content">
+
+    <div class="section-eyebrow">Professional Curriculum</div>
+    <h1 class="section-title">SolidWorks Advanced Professional</h1>
+    <p class="section-subtitle">A high-impact 6-week restructured format mastering complex CAD feature engineering, advanced assemblies, surface design workflows, and industrial mold design.</p>
+
+    <div class="pricing-container">
+      <span class="price-current">Rs. 11,999</span>
+      <span class="price-original">Rs. 24,999</span>
+    </div>
+
+    <div class="weeks-list" id="weeksList">
+
+      <div class="week-card" data-index="0">
+        <div class="week-header" role="button" aria-expanded="false" tabindex="0">
+          <span class="week-number">Week 01</span>
+          <div class="week-title-block">
+            <div class="week-title">Advanced Sketching & Feature Engineering</div>
+            <div class="week-meta">5 items · Parametrics & Complex Features</div>
+          </div>
+          <div class="week-right">
+            <div class="progress-dots">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+            <div class="toggle-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round">
+                <line x1="6" y1="1" x2="6" y2="11"/>
+                <line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="week-body">
+          <div class="week-body-inner">
+            <div class="sessions-grid">
+              <div class="session-item">
+                <div class="session-icon type-live"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5"/><path d="M7 2A5 5 0 0112 7" stroke-dasharray="2 2"/></svg></div>
+                <span class="session-label"><strong>Live Session 1</strong> – Parametric design & feature sprint workshop</span>
+                <span class="session-tag tag-live">Live</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 1</strong> – Parametric & 3D Sketching, Equations, Splines</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 2</strong> – Guided Lofts, Boundary Boss, Freeform, Advanced Patterns</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Lecture Slides</strong> – Theory and Technical Notes PDF</span>
+                <span class="session-tag tag-resource">Resource</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
+                <span class="session-label"><strong>Quiz 1</strong> – Assess parametric and feature methodologies</span>
+                <span class="session-tag tag-quiz">Quiz</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card" data-index="1">
+        <div class="week-header" role="button" aria-expanded="false" tabindex="0">
+          <span class="week-number">Week 02</span>
+          <div class="week-title-block">
+            <div class="week-title">Intelligent Assembly & Configurations</div>
+            <div class="week-meta">5 items · Top-Down Design & Design Tables</div>
+          </div>
+          <div class="week-right">
+            <div class="progress-dots">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+            <div class="toggle-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round">
+                <line x1="6" y1="1" x2="6" y2="11"/>
+                <line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="week-body">
+          <div class="week-body-inner">
+            <div class="sessions-grid">
+              <div class="session-item">
+                <div class="session-icon type-live"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5"/><path d="M7 2A5 5 0 0112 7" stroke-dasharray="2 2"/></svg></div>
+                <span class="session-label"><strong>Live Session 2</strong> – Complex assembly & configuration challenge</span>
+                <span class="session-tag tag-live">Live</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 1</strong> – Top-Down Design, Skeleton Modelling, Flexible Sub-Assemblies</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 2</strong> – Configurations, Design Tables, DriveWorksXpress</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Lecture Slides</strong> – Theory and Technical Notes PDF</span>
+                <span class="session-tag tag-resource">Resource</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
+                <span class="session-label"><strong>Quiz 2</strong> – Verify assembly and configuration concepts</span>
+                <span class="session-tag tag-quiz">Quiz</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card" data-index="2">
+        <div class="week-header" role="button" aria-expanded="false" tabindex="0">
+          <span class="week-number">Week 03</span>
+          <div class="week-title-block">
+            <div class="week-title">Advanced Surfacing Workflows</div>
+            <div class="week-meta">5 items · Hybrid Solid-Surface Modeling</div>
+          </div>
+          <div class="week-right">
+            <div class="progress-dots">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+            <div class="toggle-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round">
+                <line x1="6" y1="1" x2="6" y2="11"/>
+                <line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="week-body">
+          <div class="week-body-inner">
+            <div class="sessions-grid">
+              <div class="session-item">
+                <div class="session-icon type-live"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5"/><path d="M7 2A5 5 0 0112 7" stroke-dasharray="2 2"/></svg></div>
+                <span class="session-label"><strong>Live Session 3</strong> – Consumer product sprint — advanced surfacing techniques</span>
+                <span class="session-tag tag-live">Live</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 1</strong> – Surface Creation Suite — Lofted, Boundary, Filled Surfaces</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 2</strong> – Class A Surfacing, G2 Continuity, Hybrid Workflows</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Lecture Slides</strong> – Theory and Technical Notes PDF</span>
+                <span class="session-tag tag-resource">Resource</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
+                <span class="session-label"><strong>Quiz 3</strong> – Surface quality and creation evaluation</span>
+                <span class="session-tag tag-quiz">Quiz</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card" data-index="3">
+        <div class="week-header" role="button" aria-expanded="false" tabindex="0">
+          <span class="week-number">Week 04</span>
+          <div class="week-title-block">
+            <div class="week-title">Manufacturing & Mold Design</div>
+            <div class="week-meta">5 items · Sheet Metal, Weldments & Molds</div>
+          </div>
+          <div class="week-right">
+            <div class="progress-dots">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+            <div class="toggle-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round">
+                <line x1="6" y1="1" x2="6" y2="11"/>
+                <line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="week-body">
+          <div class="week-body-inner">
+            <div class="sessions-grid">
+              <div class="session-item">
+                <div class="session-icon type-live"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5"/><path d="M7 2A5 5 0 0112 7" stroke-dasharray="2 2"/></svg></div>
+                <span class="session-label"><strong>Live Session 4</strong> – Manufacturing sprint — Sheet metal, weldments, or molds</span>
+                <span class="session-tag tag-live">Live</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 1</strong> – Sheet Metal & Weldments — Flanges, Structural Members, Cut Lists</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 2</strong> – Mold Design — Draft Analysis, Parting Line, Core and Cavity</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Lecture Slides</strong> – Theory and Technical Notes PDF</span>
+                <span class="session-tag tag-resource">Resource</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
+                <span class="session-label"><strong>Quiz 4</strong> – Manufacturing rules and mold parameters</span>
+                <span class="session-tag tag-quiz">Quiz</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card" data-index="4">
+        <div class="week-header" role="button" aria-expanded="false" tabindex="0">
+          <span class="week-number">Week 05</span>
+          <div class="week-title-block">
+            <div class="week-title">Motion Study & Plastics Simulation</div>
+            <div class="week-meta">5 items · Kinematics & Injection Molding</div>
+          </div>
+          <div class="week-right">
+            <div class="progress-dots">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+            <div class="toggle-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round">
+                <line x1="6" y1="1" x2="6" y2="11"/>
+                <line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="week-body">
+          <div class="week-body-inner">
+            <div class="sessions-grid">
+              <div class="session-item">
+                <div class="session-icon type-live"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5"/><path d="M7 2A5 5 0 0112 7" stroke-dasharray="2 2"/></svg></div>
+                <span class="session-label"><strong>Live Session 5</strong> – Mechanism simulation + mold flow validation</span>
+                <span class="session-tag tag-live">Live</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 1</strong> – Motion Analysis — Motors, Contact, Forces, Reaction Loads</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 2</strong> – SolidWorks Plastics — Fill Analysis, Weld Lines, Warpage</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Lecture Slides</strong> – Theory and Technical Notes PDF</span>
+                <span class="session-tag tag-resource">Resource</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
+                <span class="session-label"><strong>Quiz 5</strong> – Motion and flow simulation assessment</span>
+                <span class="session-tag tag-quiz">Quiz</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card" data-index="5">
+        <div class="week-header" role="button" aria-expanded="false" tabindex="0">
+          <span class="week-number">Week 06</span>
+          <div class="week-title-block">
+            <div class="week-title">DFM, Rendering & Capstone</div>
+            <div class="week-meta">5 items · Professional Presentation</div>
+          </div>
+          <div class="week-right">
+            <div class="progress-dots">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+            <div class="toggle-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round">
+                <line x1="6" y1="1" x2="6" y2="11"/>
+                <line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="week-body">
+          <div class="week-body-inner">
+            <div class="sessions-grid">
+              <div class="session-item">
+                <div class="session-icon type-live"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5"/><path d="M7 2A5 5 0 0112 7" stroke-dasharray="2 2"/></svg></div>
+                <span class="session-label"><strong>Live Session 6</strong> – Full capstone review & professional design presentation</span>
+                <span class="session-tag tag-live">Live</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 1</strong> – SolidWorks Visualize & Photorealistic Rendering</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 2</strong> – DFM, Costing, TolAnalyst, MBD Introduction</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Capstone Project</strong> – Project Guidelines & Rubric</span>
+                <span class="session-tag tag-resource">Resource</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
+                <span class="session-label"><strong>Final Quiz</strong> – Comprehensive Course Evaluation</span>
+                <span class="session-tag tag-quiz">Quiz</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="assessment-panel">
+      <div class="panel-label">Assessment & Recognition</div>
+      <p class="assessment-desc">Every participant receives a certificate upon completion of all modules.</p>
+
+      <div class="elite-badge-card">
+        <div class="elite-icon">
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <div class="elite-text">
+          <h4>Special Recognition</h4>
+          <p><strong>ELITE Badge Awarded To:</strong> Learners achieving an aggregate score of 80% or above across all quizzes and assessments.</p>
+        </div>
+      </div>
+
+      <div class="cert-process-title">Certification Process</div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <span class="step-text">Complete all course requirements</span>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <span class="step-text">Certificate application becomes available</span>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <span class="step-text">Verification and processing</span>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <span class="step-text">Certificate dispatched via e-mail</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlights-panel">
+      <div class="panel-label">What's included</div>
+      <div class="highlights-grid">
+        <div class="highlight-item">
+          <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+          <span class="highlight-text">12 Guided Videos</span>
+        </div>
+        <div class="highlight-item">
+          <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+          <span class="highlight-text">6 Live Workshops</span>
+        </div>
+        <div class="highlight-item">
+          <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+          <span class="highlight-text">Comprehensive Capstone</span>
+        </div>
+        <div class="highlight-item">
+          <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+          <span class="highlight-text">6 Skill Assessments</span>
+        </div>
+        <div class="highlight-item">
+          <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+          <span class="highlight-text">Theory PDFs Included</span>
+        </div>
+        <div class="highlight-item">
+          <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+          <span class="highlight-text">Certificate Eligibility</span>
+        </div>
+        <div class="highlight-item">
+          <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+          <span class="highlight-text">6-Week Learning Path</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const cards = document.querySelectorAll('.week-card');
+
+  cards.forEach(card => {
+    const header = card.querySelector('.week-header');
+    const body = card.querySelector('.week-body');
+
+    const open = () => {
+      card.classList.add('open');
+      header.setAttribute('aria-expanded', 'true');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    };
+
+    const close = () => {
+      card.classList.remove('open');
+      header.setAttribute('aria-expanded', 'false');
+      body.style.maxHeight = '0';
+    };
+
+    header.addEventListener('click', () => {
+      if (card.classList.contains('open')) close();
+      else open();
+    });
+
+    header.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        header.click();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
