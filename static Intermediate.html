@@ -150,6 +150,7 @@
   .week-card:nth-child(2) { animation: fadeUp 0.5s ease 0.45s forwards; }
   .week-card:nth-child(3) { animation: fadeUp 0.5s ease 0.55s forwards; }
   .week-card:nth-child(4) { animation: fadeUp 0.5s ease 0.65s forwards; }
+  .week-card:nth-child(5) { animation: fadeUp 0.5s ease 0.75s forwards; }
 
   .week-card:hover {
     border-color: var(--border-hover);
@@ -358,7 +359,7 @@
     -webkit-backdrop-filter: blur(12px);
     opacity: 0;
     transform: translateY(16px);
-    animation: fadeUp 0.6s ease 0.75s forwards;
+    animation: fadeUp 0.6s ease 0.85s forwards;
     position: relative;
     overflow: hidden;
   }
@@ -484,7 +485,7 @@
     -webkit-backdrop-filter: blur(12px);
     opacity: 0;
     transform: translateY(16px);
-    animation: fadeUp 0.6s ease 0.85s forwards;
+    animation: fadeUp 0.6s ease 0.95s forwards;
     position: relative;
     overflow: hidden;
   }
@@ -587,7 +588,7 @@
 
     <div class="section-eyebrow">Course Curriculum</div>
     <h1 class="section-title">ANSYS Structural Analysis (Intermediate)</h1>
-    <p class="section-subtitle">A comprehensive 4-week fundamentals course covering Finite Element Analysis, SpaceClaim geometry, high-fidelity meshing, and advanced structural simulations.</p>
+    <p class="section-subtitle">A comprehensive 5-week fundamentals course covering Finite Element Analysis, SpaceClaim geometry, high-fidelity meshing, thermal simulations, and advanced structural analysis.</p>
 
     <div class="pricing-container">
       <span class="price-current">Rs. 8,999</span>
@@ -816,7 +817,59 @@
               </div>
               <div class="session-item">
                 <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
-                <span class="session-label"><strong>Practice Quiz 4</strong> – Comprehensive End-of-Course Assessment</span>
+                <span class="session-label"><strong>Practice Quiz 4</strong> – Comprehensive Course Assessment</span>
+                <span class="session-tag tag-quiz">Quiz</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card" data-index="4">
+        <div class="week-header" role="button" aria-expanded="false" tabindex="0">
+          <span class="week-number">Week 05</span>
+          <div class="week-title-block">
+            <div class="week-title">Thermal Simulation Basic</div>
+            <div class="week-meta">5 items · Heat Transfer Fundamentals</div>
+          </div>
+          <div class="week-right">
+            <div class="progress-dots">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+            <div class="toggle-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round">
+                <line x1="6" y1="1" x2="6" y2="11"/>
+                <line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="week-body">
+          <div class="week-body-inner">
+            <div class="sessions-grid">
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 1</strong> – Introduction to Thermal Analysis</span>
+                <span class="session-tag tag-session">Session</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 2</strong> – Steady state heat transfer</span>
+                <span class="session-tag tag-session">Session</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Project 5</strong> – Thermal Analysis Application</span>
+                <span class="session-tag tag-resource">Lab</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Session PDFs</strong> – Theory and Notes</span>
+                <span class="session-tag tag-resource">Resource</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
+                <span class="session-label"><strong>Practice Quiz 5</strong> – Validate your understanding</span>
                 <span class="session-tag tag-quiz">Quiz</span>
               </div>
             </div>
@@ -868,7 +921,7 @@
       <div class="highlights-grid">
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
-          <span class="highlight-text">11 Guided Sessions</span>
+          <span class="highlight-text">13 Guided Sessions</span>
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
@@ -876,11 +929,11 @@
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
-          <span class="highlight-text">4 Practice Projects</span>
+          <span class="highlight-text">5 Practice Projects</span>
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
-          <span class="highlight-text">4 Skill Assessments</span>
+          <span class="highlight-text">5 Skill Assessments</span>
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
@@ -892,7 +945,7 @@
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
-          <span class="highlight-text">4-Week Learning Path</span>
+          <span class="highlight-text">5-Week Learning Path</span>
         </div>
       </div>
     </div>
