@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ANSYS Foundation Basics - Course Curriculum</title>
+<title>Basics - ANSYS Foundation - Course Curriculum</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -312,13 +312,11 @@
   .session-icon.type-session { background: rgba(255,184,0,0.08); }
   .session-icon.type-quiz { background: rgba(255,122,0,0.08); }
   .session-icon.type-resource { background: rgba(120,255,120,0.07); }
-  .session-icon.type-live { background: rgba(255,87,34,0.08); }
 
   .session-icon svg { width: 14px; height: 14px; }
   .session-icon.type-session svg { stroke: var(--accent); }
   .session-icon.type-quiz svg { stroke: #FF7A00; }
   .session-icon.type-resource svg { stroke: #78FF78; }
-  .session-icon.type-live svg { stroke: #FF5722; }
 
   .session-label {
     font-size: 13.5px;
@@ -346,10 +344,63 @@
   .tag-session { color: var(--accent); background: rgba(255,184,0,0.08); }
   .tag-quiz { color: #FF7A00; background: rgba(255,122,0,0.08); }
   .tag-resource { color: #78FF78; background: rgba(120,255,120,0.07); }
-  .tag-live { color: #FF5722; background: rgba(255,87,34,0.08); }
+
+  /* On-Demand Doubt Support Notice */
+  .doubt-support-card {
+    margin-top: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: rgba(255,184,0,0.035);
+    border: 1px dashed rgba(255,184,0,0.28);
+    border-radius: 14px;
+    padding: 18px 22px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.6s ease 0.7s forwards;
+  }
+
+  .doubt-icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--accent-dim);
+    border: 1px solid rgba(255,184,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .doubt-icon-box svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--accent);
+  }
+
+  .doubt-content h4 {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .doubt-content p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .doubt-content strong {
+    color: var(--text-primary);
+  }
 
   .assessment-panel {
-    margin-top: 48px;
+    margin-top: 36px;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 16px;
@@ -586,22 +637,23 @@
   <div class="content">
 
     <div class="section-eyebrow">Course Curriculum</div>
-    <h1 class="section-title">Basics - ANSYS Foundation</h1>
+    <h1 class="section-title">ANSYS Simulation - Foundations</h1>
     <p class="section-subtitle">A concise 4-week introductory roadmap specifically designed to build a strong foundation in simulation setup, Workbench UI, SpaceClaim basics, and core analyses.</p>
 
     <div class="pricing-container">
-      <span class="price-current">₹359</span>
+      <span class="price-current">₹599</span>
       <span class="price-original">₹4,999</span>
     </div>
 
     <div class="weeks-list" id="weeksList">
 
+      <!-- Week 01 -->
       <div class="week-card" data-index="0">
         <div class="week-header" role="button" aria-expanded="false" tabindex="0">
           <span class="week-number">Week 01</span>
           <div class="week-title-block">
-            <div class="week-title">Introduction to Simulation & ANSYS</div>
-            <div class="week-meta">5 items · Basics & Setup</div>
+            <div class="week-title">Introduction to Simulation &amp; ANSYS</div>
+            <div class="week-meta">4 items · Basics &amp; Setup</div>
           </div>
           <div class="week-right">
             <div class="progress-dots">
@@ -619,11 +671,6 @@
           <div class="week-body-inner">
             <div class="sessions-grid">
               <div class="session-item">
-                <div class="session-icon type-live"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5"/><path d="M7 2A5 5 0 0112 7" stroke-dasharray="2 2"/></svg></div>
-                <span class="session-label"><strong>Live Session 1</strong> – Program Onboarding & Interactive Q&A</span>
-                <span class="session-tag tag-live">Live</span>
-              </div>
-              <div class="session-item">
                 <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
                 <span class="session-label"><strong>Session 1</strong> – What is Simulation/ANSYS ?</span>
                 <span class="session-tag tag-session">Session</span>
@@ -640,7 +687,7 @@
               </div>
               <div class="session-item">
                 <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
-                <span class="session-label"><strong>Quiz</strong> – From Session 1 & 2</span>
+                <span class="session-label"><strong>Quiz</strong> – From Session 1 &amp; 2</span>
                 <span class="session-tag tag-quiz">Quiz</span>
               </div>
             </div>
@@ -648,12 +695,13 @@
         </div>
       </div>
 
+      <!-- Week 02 -->
       <div class="week-card" data-index="1">
         <div class="week-header" role="button" aria-expanded="false" tabindex="0">
           <span class="week-number">Week 02</span>
           <div class="week-title-block">
-            <div class="week-title">UI & Geometry Basics</div>
-            <div class="week-meta">5 items · Workbench & SpaceClaim</div>
+            <div class="week-title">UI &amp; Geometry Basics</div>
+            <div class="week-meta">5 items · Workbench &amp; SpaceClaim</div>
           </div>
           <div class="week-right">
             <div class="progress-dots">
@@ -692,7 +740,7 @@
               </div>
               <div class="session-item">
                 <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
-                <span class="session-label"><strong>Quiz</strong> – From Session 1 & 2</span>
+                <span class="session-label"><strong>Quiz</strong> – From Session 1 &amp; 2</span>
                 <span class="session-tag tag-quiz">Quiz</span>
               </div>
             </div>
@@ -700,11 +748,12 @@
         </div>
       </div>
 
+      <!-- Week 03 -->
       <div class="week-card" data-index="2">
         <div class="week-header" role="button" aria-expanded="false" tabindex="0">
           <span class="week-number">Week 03</span>
           <div class="week-title-block">
-            <div class="week-title">Meshing & Static Structural</div>
+            <div class="week-title">Meshing &amp; Static Structural</div>
             <div class="week-meta">4 items · Core Workflow Basics</div>
           </div>
           <div class="week-right">
@@ -724,7 +773,7 @@
             <div class="sessions-grid">
               <div class="session-item">
                 <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
-                <span class="session-label"><strong>Session 1</strong> – Meshing and its importance</span>
+                <span class="session-label"><strong>Session 1</strong> – Meshing and Its Importance</span>
                 <span class="session-tag tag-session">Session</span>
               </div>
               <div class="session-item">
@@ -739,7 +788,7 @@
               </div>
               <div class="session-item">
                 <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
-                <span class="session-label"><strong>Quiz</strong> – From Session 1 & 2</span>
+                <span class="session-label"><strong>Quiz</strong> – From Session 1 &amp; 2</span>
                 <span class="session-tag tag-quiz">Quiz</span>
               </div>
             </div>
@@ -747,12 +796,13 @@
         </div>
       </div>
 
+      <!-- Week 04 -->
       <div class="week-card" data-index="3">
         <div class="week-header" role="button" aria-expanded="false" tabindex="0">
           <span class="week-number">Week 04</span>
           <div class="week-title-block">
-            <div class="week-title">Thermal & Modal Analysis</div>
-            <div class="week-meta">6 items · Foundation Wrap-up</div>
+            <div class="week-title">Thermal &amp; Modal Analysis</div>
+            <div class="week-meta">5 items · Foundation Wrap-up</div>
           </div>
           <div class="week-right">
             <div class="progress-dots">
@@ -770,18 +820,13 @@
           <div class="week-body-inner">
             <div class="sessions-grid">
               <div class="session-item">
-                <div class="session-icon type-live"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5"/><path d="M7 2A5 5 0 0112 7" stroke-dasharray="2 2"/></svg></div>
-                <span class="session-label"><strong>Live Session</strong> – Final Review & Project Debrief</span>
-                <span class="session-tag tag-live">Live</span>
-              </div>
-              <div class="session-item">
                 <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
                 <span class="session-label"><strong>Session 1</strong> – Basics of Steady State Thermal Analysis</span>
                 <span class="session-tag tag-session">Session</span>
               </div>
               <div class="session-item">
                 <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
-                <span class="session-label"><strong>Session 2</strong> – Introduction to Modal Anlaysis</span>
+                <span class="session-label"><strong>Session 2</strong> – Introduction to Modal Analysis</span>
                 <span class="session-tag tag-session">Session</span>
               </div>
               <div class="session-item">
@@ -796,7 +841,7 @@
               </div>
               <div class="session-item">
                 <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
-                <span class="session-label"><strong>Quiz</strong> – From Session 1 & 2</span>
+                <span class="session-label"><strong>Quiz</strong> – From Session 1 &amp; 2</span>
                 <span class="session-tag tag-quiz">Quiz</span>
               </div>
             </div>
@@ -806,8 +851,23 @@
 
     </div>
 
+    <!-- On-Demand Doubt Support Notice -->
+    <div class="doubt-support-card">
+      <div class="doubt-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      </div>
+      <div class="doubt-content">
+        <h4>Need Instructor Support?</h4>
+        <p>You can request <strong>one live doubt clearing session</strong> whenever you need help during the course. Simply raise a demand from your student dashboard to schedule it.</p>
+      </div>
+    </div>
+
     <div class="assessment-panel">
-      <div class="panel-label">Assessment & Recognition</div>
+      <div class="panel-label">Assessment &amp; Recognition</div>
       <p class="assessment-desc">Every participant receives a certificate upon completion of all modules.</p>
 
       <div class="elite-badge-card">
@@ -838,7 +898,7 @@
         </div>
         <div class="process-step">
           <div class="step-number">4</div>
-          <span class="step-text">Certificate dispatched via e-mail</span>
+          <span class="step-text">Certificate available on dashboard</span>
         </div>
       </div>
     </div>
@@ -852,7 +912,7 @@
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
-          <span class="highlight-text">2 Live Sessions</span>
+          <span class="highlight-text">1 Requestable Live Doubt Session</span>
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
