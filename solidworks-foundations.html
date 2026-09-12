@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SolidWorks Foundations – CFD Advanced</title>
+<title>SolidWorks Foundations - Tattva Yantrika</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -14,7 +14,7 @@
     --border: rgba(255,255,255,0.09);
     --border-hover: rgba(255,255,255,0.18);
     
-    /* Updated Theme Palette */
+    /* Black & Yellow/Orange Minimalist Theme */
     --accent: #FFB800; 
     --accent-dim: rgba(255,184,0,0.12);
     --accent-glow: rgba(255,184,0,0.06);
@@ -97,7 +97,7 @@
     font-weight: 400;
     color: var(--text-secondary);
     line-height: 1.65;
-    max-width: 520px;
+    max-width: 650px;
     margin-bottom: 24px;
     opacity: 0;
     transform: translateY(14px);
@@ -350,9 +350,63 @@
   .tag-quiz { color: #FF7A00; background: rgba(255,122,0,0.08); }
   .tag-resource { color: #78FF78; background: rgba(120,255,120,0.07); }
 
+  /* On-Demand Doubt Support Notice */
+  .doubt-support-card {
+    margin-top: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: rgba(255,184,0,0.035);
+    border: 1px dashed rgba(255,184,0,0.28);
+    border-radius: 14px;
+    padding: 18px 22px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.6s ease 0.7s forwards;
+  }
+
+  .doubt-icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--accent-dim);
+    border: 1px solid rgba(255,184,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .doubt-icon-box svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--accent);
+  }
+
+  .doubt-content h4 {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .doubt-content p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .doubt-content strong {
+    color: var(--text-primary);
+  }
+
   /* Assessment & Recognition Panel */
   .assessment-panel {
-    margin-top: 48px;
+    margin-top: 36px;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 16px;
@@ -595,10 +649,10 @@
 
     <div class="section-eyebrow">Course Curriculum</div>
     <h1 class="section-title">SolidWorks Foundations</h1>
-    <p class="section-subtitle">A structured 4-week roadmap designed to build strong CAD design fundamentals.</p>
+    <p class="section-subtitle">A structured 4-week roadmap designed to build strong CAD design fundamentals, from core 2D sketching to 3D modeling and production drafting.</p>
 
     <div class="pricing-container">
-      <span class="price-current">₹359</span>
+      <span class="price-current">₹599</span>
       <span class="price-original">₹5,999</span>
     </div>
 
@@ -794,8 +848,23 @@
 
     </div>
 
+    <!-- On-Demand Doubt Support Notice -->
+    <div class="doubt-support-card">
+      <div class="doubt-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      </div>
+      <div class="doubt-content">
+        <h4>Need Instructor Support?</h4>
+        <p>You can request <strong>one live doubt clearing session</strong> whenever you need help during the course. Simply raise a demand from your student dashboard to schedule it.</p>
+      </div>
+    </div>
+
     <div class="assessment-panel">
-      <div class="panel-label">Assessment & Recognition</div>
+      <div class="panel-label">Assessment &amp; Recognition</div>
       <p class="assessment-desc">Every participant receives a certificate upon completion of all modules.</p>
 
       <div class="elite-badge-card">
@@ -826,7 +895,7 @@
         </div>
         <div class="process-step">
           <div class="step-number">4</div>
-          <span class="step-text">Certificate dispatched via e-mail</span>
+          <span class="step-text">Certificate available on dashboard</span>
         </div>
       </div>
     </div>
@@ -840,6 +909,10 @@
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+          <span class="highlight-text">1 Requestable Live Doubt Session</span>
+        </div>
+        <div class="highlight-item">
+          <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
           <span class="highlight-text">4 Skill Assessments</span>
         </div>
         <div class="highlight-item">
@@ -848,11 +921,15 @@
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+          <span class="highlight-text">Theory PDFs Included</span>
+        </div>
+        <div class="highlight-item">
+          <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
           <span class="highlight-text">Certificate Eligibility</span>
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
-          <span class="highlight-text">Week-by-Week Learning Path</span>
+          <span class="highlight-text">4-Week Learning Path</span>
         </div>
       </div>
     </div>
