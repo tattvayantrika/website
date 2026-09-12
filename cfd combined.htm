@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ANSYS CFD Core Intermediate - Course Curriculum</title>
+<title>ANSYS CFD Comprehensive Master Track - Tattva Yantrika</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -97,7 +97,7 @@
     font-weight: 400;
     color: var(--text-secondary);
     line-height: 1.65;
-    max-width: 650px;
+    max-width: 680px;
     margin-bottom: 24px;
     opacity: 0;
     transform: translateY(14px);
@@ -146,10 +146,14 @@
     -webkit-backdrop-filter: blur(12px);
   }
 
-  .week-card:nth-child(1) { animation: fadeUp 0.5s ease 0.35s forwards; }
-  .week-card:nth-child(2) { animation: fadeUp 0.5s ease 0.45s forwards; }
-  .week-card:nth-child(3) { animation: fadeUp 0.5s ease 0.55s forwards; }
-  .week-card:nth-child(4) { animation: fadeUp 0.5s ease 0.65s forwards; }
+  .week-card:nth-child(1) { animation: fadeUp 0.4s ease 0.3s forwards; }
+  .week-card:nth-child(2) { animation: fadeUp 0.4s ease 0.35s forwards; }
+  .week-card:nth-child(3) { animation: fadeUp 0.4s ease 0.4s forwards; }
+  .week-card:nth-child(4) { animation: fadeUp 0.4s ease 0.45s forwards; }
+  .week-card:nth-child(5) { animation: fadeUp 0.4s ease 0.5s forwards; }
+  .week-card:nth-child(6) { animation: fadeUp 0.4s ease 0.55s forwards; }
+  .week-card:nth-child(7) { animation: fadeUp 0.4s ease 0.6s forwards; }
+  .week-card:nth-child(8) { animation: fadeUp 0.4s ease 0.65s forwards; }
 
   .week-card:hover {
     border-color: var(--border-hover);
@@ -312,13 +316,11 @@
   .session-icon.type-session { background: rgba(255,184,0,0.08); }
   .session-icon.type-quiz { background: rgba(255,122,0,0.08); }
   .session-icon.type-resource { background: rgba(120,255,120,0.07); }
-  .session-icon.type-live { background: rgba(255,87,34,0.08); }
 
   .session-icon svg { width: 14px; height: 14px; }
   .session-icon.type-session svg { stroke: var(--accent); }
   .session-icon.type-quiz svg { stroke: #FF7A00; }
   .session-icon.type-resource svg { stroke: #78FF78; }
-  .session-icon.type-live svg { stroke: #FF5722; }
 
   .session-label {
     font-size: 13.5px;
@@ -346,10 +348,63 @@
   .tag-session { color: var(--accent); background: rgba(255,184,0,0.08); }
   .tag-quiz { color: #FF7A00; background: rgba(255,122,0,0.08); }
   .tag-resource { color: #78FF78; background: rgba(120,255,120,0.07); }
-  .tag-live { color: #FF5722; background: rgba(255,87,34,0.08); }
+
+  /* On-Demand Doubt Support Notice */
+  .doubt-support-card {
+    margin-top: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: rgba(255,184,0,0.035);
+    border: 1px dashed rgba(255,184,0,0.28);
+    border-radius: 14px;
+    padding: 18px 22px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.6s ease 0.75s forwards;
+  }
+
+  .doubt-icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--accent-dim);
+    border: 1px solid rgba(255,184,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .doubt-icon-box svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--accent);
+  }
+
+  .doubt-content h4 {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .doubt-content p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .doubt-content strong {
+    color: var(--text-primary);
+  }
 
   .assessment-panel {
-    margin-top: 48px;
+    margin-top: 36px;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 16px;
@@ -358,7 +413,7 @@
     -webkit-backdrop-filter: blur(12px);
     opacity: 0;
     transform: translateY(16px);
-    animation: fadeUp 0.6s ease 0.75s forwards;
+    animation: fadeUp 0.6s ease 0.85s forwards;
     position: relative;
     overflow: hidden;
   }
@@ -484,7 +539,7 @@
     -webkit-backdrop-filter: blur(12px);
     opacity: 0;
     transform: translateY(16px);
-    animation: fadeUp 0.6s ease 0.85s forwards;
+    animation: fadeUp 0.6s ease 0.95s forwards;
     position: relative;
     overflow: hidden;
   }
@@ -585,23 +640,24 @@
 <div class="cfd-wrapper">
   <div class="content">
 
-    <div class="section-eyebrow">Intermediate Curriculum</div>
-    <h1 class="section-title">ANSYS CFD Core - Intermediate</h1>
-    <p class="section-subtitle">Bridge the gap between foundational theory and industrial application. Master advanced meshing logic, conjugate heat transfer, and comprehensive flow validations.</p>
+    <div class="section-eyebrow">Comprehensive Master Track</div>
+    <h1 class="section-title">ANSYS CFD - Foundations to Professional</h1>
+    <p class="section-subtitle">An end-to-end 8-week program combining complete CFD fundamentals, SpaceClaim CAD, and meshing workflows with high-level industry applications in transient physics, thermal mixing, UDFs, and dynamic meshing.</p>
 
     <div class="pricing-container">
-      <span class="price-current">₹959</span>
-      <span class="price-original">₹8,999</span>
+      <span class="price-current">₹2,749</span>
+      <span class="price-original">₹49,999</span>
     </div>
 
     <div class="weeks-list" id="weeksList">
 
+      <!-- Week 01: Squeezed Foundation Weeks 1 & 2 -->
       <div class="week-card" data-index="0">
         <div class="week-header" role="button" aria-expanded="false" tabindex="0">
           <span class="week-number">Week 01</span>
           <div class="week-title-block">
-            <div class="week-title">Workspace Navigation & Advanced Geometry</div>
-            <div class="week-meta">5 items · UI Optimization & SpaceClaim</div>
+            <div class="week-title">Basics &amp; Prerequisites + UI Tour + CAD Basics</div>
+            <div class="week-meta">10 items · Foundations &amp; SpaceClaim CAD</div>
           </div>
           <div class="week-right">
             <div class="progress-dots">
@@ -620,27 +676,52 @@
             <div class="sessions-grid">
               <div class="session-item">
                 <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
-                <span class="session-label"><strong>Session 1</strong> – Mastering the Workbench Environment</span>
-                <span class="session-tag tag-session">Video</span>
+                <span class="session-label"><strong>Session 1</strong> – Introduction to Fluid Simulation &amp; CFD</span>
+                <span class="session-tag tag-session">Session</span>
               </div>
               <div class="session-item">
                 <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
-                <span class="session-label"><strong>Session 2</strong> – Parametric CAD Modeling with SpaceClaim</span>
-                <span class="session-tag tag-session">Video</span>
+                <span class="session-label"><strong>Session 2</strong> – Steps involved in CFD</span>
+                <span class="session-tag tag-session">Session</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 3</strong> – ANSYS Tools for CFD</span>
+                <span class="session-tag tag-session">Session</span>
               </div>
               <div class="session-item">
                 <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
-                <span class="session-label"><strong>Project 1</strong> – Geometry Preparation & Cleanup Lab</span>
-                <span class="session-tag tag-resource">Lab</span>
-              </div>
-              <div class="session-item">
-                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
-                <span class="session-label"><strong>Lecture Slides</strong> – Theory and Technical Notes PDF</span>
+                <span class="session-label"><strong>Lecture Slides</strong> – Theory and Notes PDF (Fluids Intro)</span>
                 <span class="session-tag tag-resource">Resource</span>
               </div>
               <div class="session-item">
                 <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
-                <span class="session-label"><strong>Quiz 1</strong> – Assess your UI & SpaceClaim comprehension</span>
+                <span class="session-label"><strong>Quiz 1</strong> – Validate your understanding from Intro Sessions</span>
+                <span class="session-tag tag-quiz">Quiz</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 4</strong> – UI Explanation of Workbench</span>
+                <span class="session-tag tag-session">Session</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 5</strong> – CAD Modelling in SpaceClaim</span>
+                <span class="session-tag tag-session">Session</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Project 1</strong> – Hands-on CAD Application</span>
+                <span class="session-tag tag-resource">Lab</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Lecture Slides</strong> – SpaceClaim Notes &amp; Shortcuts PDF</span>
+                <span class="session-tag tag-resource">Resource</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
+                <span class="session-label"><strong>Quiz 2</strong> – Workbench &amp; SpaceClaim Assessment</span>
                 <span class="session-tag tag-quiz">Quiz</span>
               </div>
             </div>
@@ -648,12 +729,13 @@
         </div>
       </div>
 
+      <!-- Week 02: Squeezed Foundation Weeks 3 & 4 -->
       <div class="week-card" data-index="1">
         <div class="week-header" role="button" aria-expanded="false" tabindex="0">
           <span class="week-number">Week 02</span>
           <div class="week-title-block">
-            <div class="week-title">Strategic Meshing & Quality Controls</div>
-            <div class="week-meta">6 items · Sizing Strategies & Metrics</div>
+            <div class="week-title">Mesh &amp; CFD Simulation</div>
+            <div class="week-meta">13 items · Meshing Methods &amp; First Fluent Runs</div>
           </div>
           <div class="week-right">
             <div class="progress-dots">
@@ -671,33 +753,68 @@
           <div class="week-body-inner">
             <div class="sessions-grid">
               <div class="session-item">
-                <div class="session-icon type-live"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5"/><path d="M7 2A5 5 0 0112 7" stroke-dasharray="2 2"/></svg></div>
-                <span class="session-label"><strong>Live Session 1</strong> – Live Q&A: Overcoming Meshing Hurdles</span>
-                <span class="session-tag tag-live">Live</span>
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 1</strong> – Meshing and its importance</span>
+                <span class="session-tag tag-session">Session</span>
               </div>
               <div class="session-item">
                 <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
-                <span class="session-label"><strong>Session 1</strong> – Mesh Generation Strategies for Accuracy</span>
-                <span class="session-tag tag-session">Video</span>
-              </div>
-              <div class="session-item">
-                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
-                <span class="session-label"><strong>Session 2</strong> – Applying Advanced Sizing & Quality Metrics</span>
-                <span class="session-tag tag-session">Video</span>
+                <span class="session-label"><strong>Session 2</strong> – Mesh Control Methods &amp; Metrics</span>
+                <span class="session-tag tag-session">Session</span>
               </div>
               <div class="session-item">
                 <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
-                <span class="session-label"><strong>Project 2</strong> – Structured Meshing Application</span>
+                <span class="session-label"><strong>Project 2</strong> – Meshing Hands-on Application</span>
                 <span class="session-tag tag-resource">Lab</span>
               </div>
               <div class="session-item">
                 <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
-                <span class="session-label"><strong>Lecture Slides</strong> – Theory and Technical Notes PDF</span>
+                <span class="session-label"><strong>Lecture Slides</strong> – Meshing Theory and Notes PDF</span>
                 <span class="session-tag tag-resource">Resource</span>
               </div>
               <div class="session-item">
                 <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
-                <span class="session-label"><strong>Quiz 2</strong> – Verify your meshing methodology</span>
+                <span class="session-label"><strong>Quiz 3</strong> – Meshing Controls &amp; Quality Metrics</span>
+                <span class="session-tag tag-quiz">Quiz</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 3</strong> – Introduction to Fluent</span>
+                <span class="session-tag tag-session">Session</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 4</strong> – Internal Flow Simulation</span>
+                <span class="session-tag tag-session">Session</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 5</strong> – External Flow Simulation</span>
+                <span class="session-tag tag-session">Session</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Session 6</strong> – Validation &amp; Results</span>
+                <span class="session-tag tag-session">Session</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Project 3</strong> – Internal Flow Hands-on Practice</span>
+                <span class="session-tag tag-resource">Lab</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Project 4</strong> – External Flow Hands-on Practice</span>
+                <span class="session-tag tag-resource">Lab</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Lecture Slides</strong> – Fluent Simulation Theory &amp; Notes PDF</span>
+                <span class="session-tag tag-resource">Resource</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
+                <span class="session-label"><strong>Quiz 4</strong> – Comprehensive Fundamentals Assessment</span>
                 <span class="session-tag tag-quiz">Quiz</span>
               </div>
             </div>
@@ -705,12 +822,13 @@
         </div>
       </div>
 
+      <!-- Week 03: Advanced W1 -->
       <div class="week-card" data-index="2">
         <div class="week-header" role="button" aria-expanded="false" tabindex="0">
           <span class="week-number">Week 03</span>
           <div class="week-title-block">
-            <div class="week-title">Core Flow Simulations & Verification</div>
-            <div class="week-meta">6 items · Internal & External Aerodynamics</div>
+            <div class="week-title">Refresher, Capacities &amp; Complex Geometry</div>
+            <div class="week-meta">5 items · Basics &amp; Mathematical Models</div>
           </div>
           <div class="week-right">
             <div class="progress-dots">
@@ -729,32 +847,27 @@
             <div class="sessions-grid">
               <div class="session-item">
                 <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
-                <span class="session-label"><strong>Session 1</strong> – Fluent Solver Setup Integration</span>
+                <span class="session-label"><strong>Video 1</strong> – Advanced Refresher: CFD Basics, ANSYS Capacities, and Explanation of Mathematical Models.</span>
                 <span class="session-tag tag-session">Video</span>
               </div>
               <div class="session-item">
                 <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
-                <span class="session-label"><strong>Session 2</strong> – Simulating Complex Internal Flows</span>
+                <span class="session-label"><strong>Video 2</strong> – Advanced SpaceClaim Features, Including Complex Volume Extraction.</span>
                 <span class="session-tag tag-session">Video</span>
               </div>
               <div class="session-item">
-                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
-                <span class="session-label"><strong>Session 3</strong> – Aerodynamics & External Flow Physics</span>
-                <span class="session-tag tag-session">Video</span>
-              </div>
-                            <div class="session-item">
                 <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
-                <span class="session-label"><strong>Project 3</strong> – Comprehensive Flow Analysis Lab</span>
-                <span class="session-tag tag-resource">Lab</span>
-              </div>
-              <div class="session-item">
-                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
-                <span class="session-label"><strong>Lecture Slides</strong> – Theory and Technical Notes PDF</span>
+                <span class="session-label"><strong>Theory Guide</strong> – Common Practices for Error-Free Simulations (Model Selection &amp; Meshing).</span>
                 <span class="session-tag tag-resource">Resource</span>
               </div>
               <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Hands-on Lab</strong> – Convergence Plots and Their Interpretation.</span>
+                <span class="session-tag tag-resource">Lab</span>
+              </div>
+              <div class="session-item">
                 <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
-                <span class="session-label"><strong>Quiz 3</strong> – Assess simulation setup & physics</span>
+                <span class="session-label"><strong>Weekly Quiz</strong> – Test your understanding of advanced model selection and convergence.</span>
                 <span class="session-tag tag-quiz">Quiz</span>
               </div>
             </div>
@@ -762,12 +875,13 @@
         </div>
       </div>
 
+      <!-- Week 04: Advanced W2 -->
       <div class="week-card" data-index="3">
         <div class="week-header" role="button" aria-expanded="false" tabindex="0">
           <span class="week-number">Week 04</span>
           <div class="week-title-block">
-            <div class="week-title">Thermal Physics & Transient Flow</div>
-            <div class="week-meta">7 items · Heat Transfer & Visualization</div>
+            <div class="week-title">Advanced Mesh Methods</div>
+            <div class="week-meta">5 items · Sizing &amp; Refinement Logic</div>
           </div>
           <div class="week-right">
             <div class="progress-dots">
@@ -785,38 +899,240 @@
           <div class="week-body-inner">
             <div class="sessions-grid">
               <div class="session-item">
-                <div class="session-icon type-live"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5"/><path d="M7 2A5 5 0 0112 7" stroke-dasharray="2 2"/></svg></div>
-                <span class="session-label"><strong>Live Session 2</strong> – Final Review & Industrial Workflows</span>
-                <span class="session-tag tag-live">Live</span>
-              </div>
-              <div class="session-item">
                 <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
-                <span class="session-label"><strong>Session 1</strong> – Simulating Thermal Mixing Phenomena</span>
+                <span class="session-label"><strong>Video 1</strong> – Advanced Mesh Methods (Biasing, Hexagonal Meshing).</span>
                 <span class="session-tag tag-session">Video</span>
               </div>
               <div class="session-item">
                 <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
-                <span class="session-label"><strong>Session 2</strong> – Transient Flow Terminologies in ANSYS</span>
-                <span class="session-tag tag-session">Video</span>
-              </div>
-              <div class="session-item">
-                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
-                <span class="session-label"><strong>Session 3</strong> – Transient Flow Simulation Tutorial</span>
+                <span class="session-label"><strong>Video 2</strong> – Localized Refinement: Sphere of Influence &amp; Body of Influence.</span>
                 <span class="session-tag tag-session">Video</span>
               </div>
               <div class="session-item">
                 <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
-                <span class="session-label"><strong>Project 4</strong> – Conjugate Heat Transfer Simulation</span>
-                <span class="session-tag tag-resource">Lab</span>
-              </div>
-              <div class="session-item">
-                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
-                <span class="session-label"><strong>Lecture Slides</strong> – Theory and Technical Notes PDF</span>
+                <span class="session-label"><strong>Theory Guide</strong> – Guide to Advanced Meshing Controls.</span>
                 <span class="session-tag tag-resource">Resource</span>
               </div>
               <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Hands-on Lab</strong> – Practice Project 1: Complex Geometry Meshing &amp; Volume Extraction.</span>
+                <span class="session-tag tag-resource">Lab</span>
+              </div>
+              <div class="session-item">
                 <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
-                <span class="session-label"><strong>Quiz 4</strong> – Comprehensive course evaluation</span>
+                <span class="session-label"><strong>Weekly Quiz</strong> – Validate your grasp of localized refinements and sizing logic.</span>
+                <span class="session-tag tag-quiz">Quiz</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Week 05: Advanced W3 -->
+      <div class="week-card" data-index="4">
+        <div class="week-header" role="button" aria-expanded="false" tabindex="0">
+          <span class="week-number">Week 05</span>
+          <div class="week-title-block">
+            <div class="week-title">Transient Fluid Dynamics Simulation</div>
+            <div class="week-meta">5 items · Stability &amp; Flow Analysis</div>
+          </div>
+          <div class="week-right">
+            <div class="progress-dots">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+            <div class="toggle-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round">
+                <line x1="6" y1="1" x2="6" y2="11"/>
+                <line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="week-body">
+          <div class="week-body-inner">
+            <div class="sessions-grid">
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Video 1</strong> – Transient Flow Inputs and Constituents (What it needs to run properly).</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Video 2</strong> – Transient Flow Simulation Examples: Internal vs. External Flow.</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Theory Guide</strong> – Time-Stepping and Courant Number Guide.</span>
+                <span class="session-tag tag-resource">Resource</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Hands-on Lab</strong> – Solver Settings for Transient Stability.</span>
+                <span class="session-tag tag-resource">Lab</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
+                <span class="session-label"><strong>Weekly Quiz</strong> – Test your knowledge on Courant numbers and transient setup rules.</span>
+                <span class="session-tag tag-quiz">Quiz</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Week 06: Advanced W4 -->
+      <div class="week-card" data-index="5">
+        <div class="week-header" role="button" aria-expanded="false" tabindex="0">
+          <span class="week-number">Week 06</span>
+          <div class="week-title-block">
+            <div class="week-title">Thermals &amp; Heat Exchanger Simulation</div>
+            <div class="week-meta">5 items · Heat Transfer &amp; Exchangers</div>
+          </div>
+          <div class="week-right">
+            <div class="progress-dots">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+            <div class="toggle-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round">
+                <line x1="6" y1="1" x2="6" y2="11"/>
+                <line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="week-body">
+          <div class="week-body-inner">
+            <div class="sessions-grid">
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Video 1</strong> – Introduction to Thermal Mixing and Its Simulation.</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Video 2</strong> – Step-by-Step: Steady-State Heat Exchanger Simulation with Explanation.</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Theory Guide</strong> – Thermal Boundary Conditions Reference.</span>
+                <span class="session-tag tag-resource">Resource</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Hands-on Lab</strong> – Practice Project 2: Heat Exchanger Application.</span>
+                <span class="session-tag tag-resource">Lab</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
+                <span class="session-label"><strong>Weekly Quiz</strong> – Assess your understanding of thermal boundaries and heat transfer.</span>
+                <span class="session-tag tag-quiz">Quiz</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Week 07: Advanced W5 -->
+      <div class="week-card" data-index="6">
+        <div class="week-header" role="button" aria-expanded="false" tabindex="0">
+          <span class="week-number">Week 07</span>
+          <div class="week-title-block">
+            <div class="week-title">Multiphase &amp; User Defined Functions</div>
+            <div class="week-meta">5 items · Multiphase &amp; UDFs</div>
+          </div>
+          <div class="week-right">
+            <div class="progress-dots">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+            <div class="toggle-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round">
+                <line x1="6" y1="1" x2="6" y2="11"/>
+                <line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="week-body">
+          <div class="week-body-inner">
+            <div class="sessions-grid">
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Video 1</strong> – Introduction to Multiphase Simulation &amp; Dynamic Meshing.</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Video 2</strong> – Introduction to UDFs (User Defined Functions) and When to Use Them.</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Theory Guide</strong> – Overview of Multiphase Models (VOF, Eulerian, Mixture).</span>
+                <span class="session-tag tag-resource">Resource</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Hands-on Lab</strong> – Basic UDF Syntax and Hooking Guide.</span>
+                <span class="session-tag tag-resource">Lab</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
+                <span class="session-label"><strong>Weekly Quiz</strong> – Evaluate your comprehension of multiphase physics and UDF structures.</span>
+                <span class="session-tag tag-quiz">Quiz</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Week 08: Advanced W6 -->
+      <div class="week-card" data-index="7">
+        <div class="week-header" role="button" aria-expanded="false" tabindex="0">
+          <span class="week-number">Week 08</span>
+          <div class="week-title-block">
+            <div class="week-title">Dynamic Mesh &amp; Post Processing Methods</div>
+            <div class="week-meta">5 items · Professional Reporting</div>
+          </div>
+          <div class="week-right">
+            <div class="progress-dots">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+            <div class="toggle-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round">
+                <line x1="6" y1="1" x2="6" y2="11"/>
+                <line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="week-body">
+          <div class="week-body-inner">
+            <div class="sessions-grid">
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Video 1</strong> – Dynamic Mesh Simulation of Fan Blade.</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-session"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,1 11,7 3,13"/></svg></div>
+                <span class="session-label"><strong>Video 2</strong> – Qualitative &amp; Quantitative Post Processing.</span>
+                <span class="session-tag tag-session">Video</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Theory Guide</strong> – Post-Processing Interpretation &amp; Dynamic Mesh Methods</span>
+                <span class="session-tag tag-resource">Resource</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-resource"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="10" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="10" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></div>
+                <span class="session-label"><strong>Hands-on Lab</strong> – Practice Project 3: Dynamic Mesh Project.</span>
+                <span class="session-tag tag-resource">Lab</span>
+              </div>
+              <div class="session-item">
+                <div class="session-icon type-quiz"><svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a6 6 0 100 12A6 6 0 007 1z"/><path d="M7 10v.5M5.5 5a1.5 1.5 0 113 0c0 1-1.5 1.5-1.5 2.5"/></svg></div>
+                <span class="session-label"><strong>Final Quiz</strong> – Comprehensive End-of-Course Assessment to lock in your mastery.</span>
                 <span class="session-tag tag-quiz">Quiz</span>
               </div>
             </div>
@@ -826,9 +1142,24 @@
 
     </div>
 
+    <!-- On-Demand Doubt Support Notice -->
+    <div class="doubt-support-card">
+      <div class="doubt-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      </div>
+      <div class="doubt-content">
+        <h4>Need Dedicated Instructor Support?</h4>
+        <p>You can request <strong>up to 6 live doubt clearing sessions</strong> during your 8-week path. Whenever you need guidance on your simulation projects or complex solvers, simply raise a request directly from your dashboard.</p>
+      </div>
+    </div>
+
     <div class="assessment-panel">
-      <div class="panel-label">Assessment & Recognition</div>
-      <p class="assessment-desc">Every participant receives a certificate upon completion of all modules.</p>
+      <div class="panel-label">Assessment &amp; Recognition</div>
+      <p class="assessment-desc">Every participant receives a verifiable professional certificate upon completion of all modules.</p>
 
       <div class="elite-badge-card">
         <div class="elite-icon">
@@ -838,7 +1169,7 @@
         </div>
         <div class="elite-text">
           <h4>Special Recognition</h4>
-          <p><strong>ELITE Badge Awarded To:</strong> Learners achieving an aggregate score of 80% or above across all quizzes and assessments.</p>
+          <p><strong>ELITE Badge Awarded To:</strong> Learners achieving an aggregate score of 80% or above across all quizzes, assignments, and capstone evaluations.</p>
         </div>
       </div>
 
@@ -858,7 +1189,7 @@
         </div>
         <div class="process-step">
           <div class="step-number">4</div>
-          <span class="step-text">Certificate dispatched via e-mail</span>
+          <span class="step-text">Certificate available on dashboard</span>
         </div>
       </div>
     </div>
@@ -868,23 +1199,23 @@
       <div class="highlights-grid">
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
-          <span class="highlight-text">11 Guided Sessions</span>
+          <span class="highlight-text">23 Guided Modules</span>
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
-          <span class="highlight-text">2 Live Sessions</span>
+          <span class="highlight-text">Up to 6 Live Doubt Sessions</span>
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
-          <span class="highlight-text">4 Practice Projects</span>
+          <span class="highlight-text">7 Hands-on Practice Labs</span>
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
-          <span class="highlight-text">4 Skill Assessments</span>
+          <span class="highlight-text">10 Skill Assessments</span>
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
-          <span class="highlight-text">Theory PDFs Included</span>
+          <span class="highlight-text">Theory &amp; PDF Guides</span>
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
@@ -892,7 +1223,7 @@
         </div>
         <div class="highlight-item">
           <div class="check-mark"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
-          <span class="highlight-text">4-Week Learning Path</span>
+          <span class="highlight-text">8-Week Comprehensive Path</span>
         </div>
       </div>
     </div>
